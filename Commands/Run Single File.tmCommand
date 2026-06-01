@@ -7,7 +7,7 @@
 	<key>beforeRunningCommand</key>
 	<string>nop</string>
 	<key>command</key>
-	<string>#!/usr/bin/env ruby20
+	<string>#!/usr/bin/env ruby
 
 require ENV['TM_BUNDLE_SUPPORT'] + '/lib/text_mate'
 TextMate.require_bundle 'bin/run_single_script'</string>
