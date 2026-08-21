@@ -14,7 +14,7 @@ module TextMate
         return options if new_classes.empty?
         key = options.key?('class') ? 'class' : :class
 
-        cls = options[key].to_s
+        cls = options[key].to_s.dup
         cls << ' ' unless cls.empty?
 
         cls << new_classes.join(' ')

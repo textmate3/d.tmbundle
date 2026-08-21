@@ -18,13 +18,13 @@ describe TextMate::Helpers::OptionsHelper do
   describe 'append_class!' do
     context 'when a class exists' do
       it 'appends the given classes existing class key' do
-        result[:class] << ' bar'
+        result[:class] = 'foo bar'
         helper.append_class!(options, 'bar').should == result
       end
 
       context 'when multiple classes are appended' do
         it 'appends all the given classes' do
-          result[:class] << ' bar baz'
+          result[:class] = 'foo bar baz'
           helper.append_class!(options, 'bar', :baz).should == result
         end
       end
@@ -33,7 +33,7 @@ describe TextMate::Helpers::OptionsHelper do
         let(:options) { { 'class' => 'foo', :id => 'bar' } }
 
         it 'appends the given classes existing class key' do
-          result['class'] << ' bar'
+          result['class'] = 'foo bar'
           helper.append_class!(options, 'bar').should == result
         end
       end
