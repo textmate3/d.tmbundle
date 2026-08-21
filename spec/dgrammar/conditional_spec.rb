@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'condtional' do
+describe 'condtional', :gtm do
   subject { code_to_file(code) }
 
   describe '"if" inside symbol' do

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'string literal' do
+describe 'string literal', :gtm do
   subject { code_to_file(code) }
 
   describe '" bar("' do

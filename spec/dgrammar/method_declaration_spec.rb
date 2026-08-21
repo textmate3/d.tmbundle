@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'method declaration' do
+describe 'method declaration', :gtm do
   subject { code_to_file(code) }
 
   describe 'void foo() {}' do
