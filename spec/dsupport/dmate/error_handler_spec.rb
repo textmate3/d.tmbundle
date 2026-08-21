@@ -17,8 +17,8 @@ describe DMate::ErrorHandler do
       end
 
       context 'when the given value is a module name' do
-        it 'returns the given path unchanged' do
-          module_to_path('foo.bar').should == 'foo.bar'
+        it 'returns the absolute path of the given value' do
+          module_to_path('foo.bar').should == File.absolute_path('foo.bar')
         end
 
         context 'and original module name exists' do
@@ -26,15 +26,15 @@ describe DMate::ErrorHandler do
             expect(File).to receive(:exist?).once.and_return(true)
           end
 
-          it 'returns the given path unchanged' do
-            module_to_path('foo.bar').should == 'foo.bar'
+          it 'returns the absolute path of the given value' do
+            module_to_path('foo.bar').should == File.absolute_path('foo.bar')
           end
         end
       end
 
       context 'when the given value is a path' do
-        it 'returns the given path unchanged' do
-          module_to_path('x/y').should == 'x/y'
+        it 'returns the absolute path of the given value' do
+          module_to_path('x/y').should == File.absolute_path('x/y')
         end
 
         context 'and original path exists' do
@@ -42,8 +42,8 @@ describe DMate::ErrorHandler do
             expect(File).to receive(:exist?).once.and_return(true)
           end
 
-          it 'returns the given path unchanged' do
-            module_to_path('x/y').should == 'x/y'
+          it 'returns the absolute path of the given value' do
+            module_to_path('x/y').should == File.absolute_path('x/y')
           end
         end
       end
@@ -67,8 +67,8 @@ describe DMate::ErrorHandler do
             expect(File).to receive(:exist?).once.and_return(true)
           end
 
-          it 'returns the given path unchanged' do
-            module_to_path('foo.bar').should == 'foo.bar'
+          it 'returns the absolute path of the given value' do
+            module_to_path('foo.bar').should == File.absolute_path('foo.bar')
           end
         end
       end
@@ -83,8 +83,8 @@ describe DMate::ErrorHandler do
             expect(File).to receive(:exist?).once.and_return(true)
           end
 
-          it 'returns the given path unchanged' do
-            module_to_path('x/y').should == 'x/y'
+          it 'returns the absolute path of the given value' do
+            module_to_path('x/y').should == File.absolute_path('x/y')
           end
         end
       end
